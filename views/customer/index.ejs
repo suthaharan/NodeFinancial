@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Customer Table</h2>
+  <p>Customers in the list:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% _.each(customers, function(customer){ %>
+
+
+      <tr data-id="<%= customer.id %>" data-model="customer">
+        <td><%= customer.id %></td>
+        <td><%= customer.name %></td>
+        <td><%= customer.email %></td>
+        <td>
+        <a href="/customer/show/<%= customer.id %>">Show</a>
+        <a href="/customer/edit/<%= customer.id %>">Edit</a>
+        <a href="/customer/destroy/<%= customer.id %>">Delete</a>
+        </td>
+      </tr>
+
+  <% }) %>  
+    </tbody>
+  </table>
+</div>
