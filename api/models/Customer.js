@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
 
   	name: { type: 'string', required: true},
-  	email: {type: 'string', email: true, required: true},
+  	email: {type: 'string'},
   	state: { type: 'string'}
 
   }

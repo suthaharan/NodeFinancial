@@ -17,7 +17,7 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-  connection: 'nfMysqlServer',
+  connection: 'firebase', //'nfMysqlServer',
 
   /***************************************************************************
   *                                                                          *
