@@ -16,3 +16,16 @@ a [Sails](http://sailsjs.org) application
 - Create credentials for firebase admin
 - Install Firebase driver : https://www.npmjs.com/package/sails-firebase
 - $ npm install sails-firebase --save
+
+
+# Layout integration
+
+$ sails lift
+
+- Routing takes place under config/routes.js
+- Look at Views folder and create a static folder for holding static pages. views/static/index.ejs
+- Change default route in config/routes.js to 'static/index'
+
+
+# User sign up page, login
+$ sails generate api user
