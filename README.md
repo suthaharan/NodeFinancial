@@ -2,6 +2,10 @@
 
 a [Sails](http://sailsjs.org) application
 
+# Installing sails with --linker
+$ sails new nodefinancial --linker (this is not needed after 0.10 version)
+
+
 # MySQL 
 - Connect to MySQL or start the MAMP server on the local instance
 - Insert/Update/Delete/Select - Object rights
@@ -29,3 +33,27 @@ $ sails lift
 
 # User sign up page, login
 $ sails generate api user
+
+
+# Environment based sails start
+
+To use the env/development.js connection settings
+$ sails lift NODE_ENV=development 
+
+To use the production tasks taks/register/prod.js
+$ sails lift --prod
+
+$ sails www
+
+Runs the build task (tasks/register/build.js) that compiles all the assets to www subfolder instead of .tmp/public using relative paths in references. This allows serving static content with Apache or Nginx instead of relying on 'www middleware'.
+
+$ sails www --prod (production)
+
+Runs the buildProd task (tasks/register/buildProd.js) that does the same as build task but also optimizes assets.
+
+You may run other tasks by specifying setting NODE_ENV and creating a task list in tasks/register/ with the same name. For example, if NODE_ENV is QA, sails will run tasks/register/QA.js if it exists.
+
+
+# sailsjs connect.session memorystore is not designed for production environment
+
+All what is needed is to replace memory adapter in config/session.js with another adapter, Redis/Mongo. It allows multiple sailsjs servers to effectively manage sessions. You can also set the cookie life time in this. 
