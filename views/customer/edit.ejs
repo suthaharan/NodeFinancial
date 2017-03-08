@@ -13,6 +13,7 @@
 	    <label for="state">State:</label>
 	    <input type="text" value="<%= customer.state %>" placeholder="State" name="state" class="form-control" />
 	  </div>
+	  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
 	  <input type="submit"  value="Update customer" class="btn btn-default"/>
 	</form>
 </div>

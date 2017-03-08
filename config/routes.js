@@ -33,12 +33,35 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'homepage' },
-  '/login': 'UserController.login',
-  'get /signup': { view: 'user/signup' },
-  '/welcome': { view: 'user/welcome' },
+  '/login':{
+    view: 'user/login',
+    locals: {
+      layout: 'layout_public'
+    }
+  }, 
   'post /login': 'UserController.login',
-  'post /signup': 'UserController.signup',
-  '/logout': 'UserController.logout'
+  'get /register': {
+    view: 'user/register',
+    locals: {
+      layout: 'layout_public'
+    }
+  }, 
+  'post /register': 'UserController.register',
+  '/welcome': { view: 'user/welcome' },
+  '/logout': 'UserController.logout',
+  '/forgotpassword':{
+    view: 'user/forgotpassword',
+    locals: {
+      layout: 'layout_public'
+    }
+  }, 
+  'post /forgotpassword': 'UserController.forgotpassword',
+  'get /privacy':{
+    view: 'user/privacy',
+    locals: {
+      layout: 'layout_public'
+    }
+  }
 
   /***************************************************************************
   *                                                                          *
