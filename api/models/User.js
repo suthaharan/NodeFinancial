@@ -7,8 +7,8 @@
 
 module.exports = {
 
-  schema: true,	
-
+  schema: true, 
+  autoPK: true,	
   attributes: {
   	username: { type: 'string', required: true},
   	yob: { type: 'string'},

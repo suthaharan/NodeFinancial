@@ -19,10 +19,12 @@ module.exports = {
 	},
 
 	show: function(req, res, next){
-		Customer.findOne( req.param('id'), function foundCustomer(err, customer){
-			if(err) return next(err);
+		//Customer.findOne( req.param('id'), function foundCustomer(err, customer){
+		Customer.find( req.param('id') ).populate('stocks').exec( function (err, customer){
+	        if (err) return next(err);
 			if(!customer) return next();
-			res.view({ customer: customer });
+			//res.json(customer[0]);
+			res.view({ customer: customer[0] });
 		});
 	},
 

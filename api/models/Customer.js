@@ -6,18 +6,18 @@
  */
 
 module.exports = {
-  schema: true,	
-  
-  attributes: {
-	id: {
-	  type: 'string',
-	  required: true,
-	  unique: true
-	},
-  	name: { type: 'string', required: true},
-  	email: {type: 'string'},
-  	state: { type: 'string'}
 
-  }
+    schema: true,	
+    autoPK: true,
+    attributes: {
+    	name: { type: 'string', required: true },
+    	email: { type: 'string' },
+    	state: { type: 'string' },
+      stocks: {
+        collection: 'stock', //what model to use
+        via: 'owner' //what attribute connects to the customer model
+      }
+    }
+
 };
 

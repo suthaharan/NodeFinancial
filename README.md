@@ -57,3 +57,6 @@ You may run other tasks by specifying setting NODE_ENV and creating a task list 
 # sailsjs connect.session memorystore is not designed for production environment
 
 All what is needed is to replace memory adapter in config/session.js with another adapter, Redis/Mongo. It allows multiple sailsjs servers to effectively manage sessions. You can also set the cookie life time in this. 
+
+$ sails generate api stock
+

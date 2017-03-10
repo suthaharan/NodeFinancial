@@ -4,3 +4,40 @@
 
 <h3>Email: <%= customer.email %></h3>
 <h4>State: <%= customer.state %></h4>
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th># of shares</th>
+        <th>Current price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% _.each(customer.stocks, function(stock){ %>
+
+
+      <tr data-id="<%= stock.id %>" data-model="stock">
+        <td><%= stock.symbol %></td>
+        <td><%= stock.number_of_shares %></td>
+        <td>
+        <a href="/stock/show/<%= stock.id %>">Show</a>
+        <a href="/stock/edit/<%= stock.id %>">Edit</a>
+        <a href="/stock/destroy/<%= stock.id %>">Delete</a>
+        </td>
+      </tr>
+
+  <% }); %>  
+    </tbody>
+  </table>
+
+
+
+<form action="/stock/new" method="POST">
+	<input type="hidden" value="<%= customer.id %>" name="owner">
+	<input type="submit" value="Add stock" />
+	<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>
