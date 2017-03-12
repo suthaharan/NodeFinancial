@@ -60,3 +60,11 @@ All what is needed is to replace memory adapter in config/session.js with anothe
 
 $ sails generate api stock
 
+
+$ npm install --save passport passport-http passport-jwt passport-local
+
+To find port number in use
+
+$ lsof -i tcp:8888
+If you get address in use message when lifting sails, try to remove node from running
+$ killall -9 node

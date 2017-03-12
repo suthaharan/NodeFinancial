@@ -37,13 +37,13 @@
 
 <body>
 	<div class="brand clearfix">
-		<a href="index.html" class="logo"><img src="img/logo.jpg" class="img-responsive" alt=""></a>
+		<a href="index.html" class="logo"><img src="/images/logo.jpg" class="img-responsive" alt=""></a>
 		<span class="menu-btn"><i class="fa fa-bars"></i></span>
 		<ul class="ts-profile-nav">
 			<li><a href="#">Help</a></li>
 			<li><a href="#">Settings</a></li>
 			<li class="ts-account">
-				<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
+				<a href="#"><img src="/images/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
 				<ul>
 					<li><a href="#">My Account</a></li>
 					<li><a href="#">Edit Account</a></li>
@@ -61,7 +61,7 @@
 					<input type="text" class="ts-sidebar-search" placeholder="Search here...">
 				</li>
 				<li class="ts-label">Main</li>
-				<li class="open"><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+				<li class="open"><a href="/welcome"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 				<li><a href="#"><i class="fa fa-desktop"></i> UI Elements</a>
 					<ul>
 						<li><a href="panels.html">Panels and Wells</a></li>
@@ -99,11 +99,11 @@
 					<li><a href="#">Help</a></li>
 					<li><a href="#">Settings</a></li>
 					<li class="ts-account">
-						<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
+						<a href="#"><img src="/images/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
 						<ul>
 							<li><a href="#">My Account</a></li>
 							<li><a href="#">Edit Account</a></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="/logout">Logout</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -112,7 +112,7 @@
 		</nav>
 		<div class="content-wrapper">
 			<div class="container-fluid">
-
+				<%- body %>
 				<div class="row">
 					<div class="col-md-12">
 
@@ -276,39 +276,23 @@
 		</div>
 	</div>
 
-	<!-- Loading Scripts -->
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/bootstrap-select.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/jquery.dataTables.min.js"></script>
-	<script src="/js/dataTables.bootstrap.min.js"></script>
-	<script src="/js/Chart.min.js"></script>
-	<script src="/js/fileinput.js"></script>
-	<script src="/js/chartData.js"></script>
-	<script src="/js/main.js"></script>
+	<!-- Loading Scripts -->    
+
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/libraries/jquery-1.11.2.min.js"></script>
+    <script src="/js/libraries/jquery.dataTables.min.js"></script>
+	<script src="/js/libraries/bootstrap-select.min.js"></script>
+	<script src="/js/libraries/bootstrap.min.js"></script>
+	<script src="/js/libraries/jquery.dataTables.min.js"></script>
+	<script src="/js/libraries/dataTables.bootstrap.min.js"></script>
+	<script src="/js/libraries/Chart.min.js"></script>
+	<script src="/js/libraries/fileinput.js"></script>
+	<script src="/js/libraries/chartData.js"></script>
+	<script src="/js/libraries/main.js"></script>
+    <script src="/js/libraries/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	
 	<script>
-		
-	window.onload = function(){
-    
-		// Line chart from swirlData for dashReport
-		var ctx = document.getElementById("dashReport").getContext("2d");
-		window.myLine = new Chart(ctx).Line(swirlData, {
-			responsive: true,
-			scaleShowVerticalLines: false,
-			scaleBeginAtZero : true,
-			multiTooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
-		}); 
-		
-		// Pie Chart from doughutData
-		var doctx = document.getElementById("chart-area3").getContext("2d");
-		window.myDoughnut = new Chart(doctx).Pie(doughnutData, {responsive : true});
 
-		// Dougnut Chart from doughnutData
-		var doctx = document.getElementById("chart-area4").getContext("2d");
-		window.myDoughnut = new Chart(doctx).Doughnut(doughnutData, {responsive : true});
-
-	}
 	</script>
 
 </body>

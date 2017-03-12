@@ -26,7 +26,14 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
- '*': 'flash',
+ '*': ['flash','isAuthorized'], // Everything resctricted here
+      'UserController': {
+        'create': true, // We dont need authorization here, allowing public access
+        'login': true 
+      },
+      'AuthController': {
+        '*': true // We dont need authorization here, allowing public access
+      }
 
   /***************************************************************************
   *                                                                          *

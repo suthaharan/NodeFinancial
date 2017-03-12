@@ -13,10 +13,10 @@ module.exports = {
     	name: { type: 'string', required: true },
     	email: { type: 'string' },
     	state: { type: 'string' },
-      stocks: {
-        collection: 'stock', //what model to use
-        via: 'owner' //what attribute connects to the customer model
-      }
+        stocks: {
+            collection: 'stock', //what model to use
+            via: 'owner' //what attribute connects to the customer model
+        }
     }
 
 };

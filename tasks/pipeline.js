@@ -33,6 +33,8 @@ var jsFilesToInject = [
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
+  'js/libraries/jquery-1.11.2.min.js',
+  'js/libraries/jquery.dataTables.min.js',
   'js/**/*.js'
 ];
 

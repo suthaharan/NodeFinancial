@@ -33,7 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'homepage' },
-  '/login':{
+  'get /login':{
     view: 'user/login',
     locals: {
       layout: 'layout_public'
@@ -46,10 +46,15 @@ module.exports.routes = {
       layout: 'layout_public'
     }
   }, 
-  'post /register': 'UserController.register',
-  '/welcome': { view: 'user/welcome' },
+  'post /create': 'UserController.create',
+  'get /welcome': { 
+    view: 'user/welcome',
+    locals: {
+      layout: 'layout_private'
+    }
+  },
   '/logout': 'UserController.logout',
-  '/forgotpassword':{
+  'get /forgotpassword':{
     view: 'user/forgotpassword',
     locals: {
       layout: 'layout_public'
